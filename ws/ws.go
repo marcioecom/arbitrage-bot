@@ -56,10 +56,7 @@ func (w *Websocket) ListenMessages(handler models.HandlerTicker) {
 				continue
 			}
 
-			if err := handler(bt); err != nil {
-				zap.L().Error("error handling message", zap.Error(err))
-				continue
-			}
+			handler(bt)
 		}
 	}()
 }

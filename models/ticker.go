@@ -2,7 +2,7 @@ package models
 
 import "time"
 
-type HandlerTicker = func(BinanceTicker) error
+type HandlerTicker = func(BinanceTicker)
 
 type Ticker struct {
 	FirstID     int64

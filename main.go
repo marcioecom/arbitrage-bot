@@ -20,10 +20,9 @@ func main() {
 		zap.L().Fatal("error initializing ws", zap.Error(err))
 	}
 
-	wsclient.ListenMessages(func(bt models.BinanceTicker) error {
+	wsclient.ListenMessages(func(bt models.BinanceTicker) {
 		ticker := helper.ParseBinanceTicker(bt)
 		zap.L().Info("handler", zap.Any("ticker", ticker))
-		return nil
 	})
 
 	ch := make(chan os.Signal, 1)
