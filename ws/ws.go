@@ -12,7 +12,7 @@ import (
 
 func New(endpoint string) IWebsocket {
 	return &Websocket{
-		EndPoint: endpoint,
+		endPoint: endpoint,
 	}
 }
 
@@ -22,7 +22,7 @@ func (w *Websocket) Init() error {
 		HandshakeTimeout: 45 * time.Second,
 	}
 
-	conn, res, err := dialer.Dial(w.EndPoint, nil)
+	conn, res, err := dialer.Dial(w.endPoint, nil)
 	if err != nil {
 		zap.L().Error("error dialing", zap.Int("statusCode", res.StatusCode), zap.Error(err))
 		return err

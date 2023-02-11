@@ -3,6 +3,6 @@ package ws
 import "github.com/gorilla/websocket"
 
 type Websocket struct {
-	EndPoint string
+	endPoint string
 	conn     *websocket.Conn
 }
